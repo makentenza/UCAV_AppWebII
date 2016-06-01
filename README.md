@@ -1,3 +1,5 @@
+Ejemplo utiizado para la asignatura Desarrollo de Aplicaciones Web II, usando un patron Modelo Vista Controlador (MVC) y el Framework DJango.
+
 Importar los datos de la BD:
 
     ./manage.py migrate
