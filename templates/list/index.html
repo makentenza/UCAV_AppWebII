@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestor de Tareas</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" src="bootstrap-datepicker.css">
+	<script rel="stylesheet" src="bootstrap-datepicker.js" ></script>
+</head>
+
+<body>
+	<div class="container">
+		<h2>Gestor de Tareas</h2>
+		<div class="row">
+			<div class="col-sm-6 col-offset-6">
+				<table class="table">
+				<tr>
+					<th>Tarea</th>
+					<th>Descripccion</th>
+					<th>
+
+				{% if up == True %}	<a href="/?order=asc" class="asc"><span class="glyphicon glyphicon-chevron-down"></span></a>
+				{% endif %}
+				{%if down == True%}	 <a href="/?order=desc" class="desc"><span class="glyphicon glyphicon-chevron-up"></span></a>
+				{%endif %}	Fecha </th><th>Accion</th>
+				</tr>
+
+				{%for i in tasks%}
+
+				<tr>
+					<td>{{i.title}}</td>
+					<td>{{i.description}}</td>
+					<td>{{i.date}}</td>
+					<td>    <a href="{% url 'tasks:task_edit' i.id %}">editar</a>
+				    <a href="{% url 'tasks:task_delete' i.id %}">eliminar</a>
+				    </td>
+				</tr>
+				{%endfor%}
+				</table>
+				<a href="{% url 'tasks:task_new' %}">Nueva</a>
+			</div>
+		 </div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	</div>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
