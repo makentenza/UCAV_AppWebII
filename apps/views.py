@@ -5,16 +5,17 @@ from django.shortcuts import render_to_response
 
 def index(request):
 
-order = request.GET.get('order', 'desc')
-tasks = Task.objects.all()
-down=True
-up=False
+  order = request.GET.get('order', 'desc')
 
-if(order == 'desc'):
+  tasks = Task.objects.all()
+  down=True
+  up=False
+  if(order == 'desc'):
     tasks = tasks.order_by('-date')
     up=True
     down=False
-elif(order == 'asc'):
+  elif(order == 'asc'):
     tasks = tasks.order_by('date')
 
-return render_to_response('list/index.html',{'tasks': tasks,'up':up,'down':down})
+
+  return render_to_response('list/index.html',{'tasks': tasks,'up':up,'down':down})
