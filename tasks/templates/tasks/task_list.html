@@ -13,10 +13,10 @@
 			<div class="col-sm-6 col-offset-6">
 				<table class="table">
 				<tr>
-					<th>Task</th>
-					<th>Description</th>
+					<th>Tarea</th>
+					<th>Descripcion</th>
 					<th> <a href="/?order=asc" class="asc"><span class="glyphicon glyphicon-chevron-down"></span></a>Fecha</th>
-					<th>Action</th>
+					<th>Acciones</th>
 				</tr>
 				{%for i in object_list%}
 				<tr>
@@ -29,7 +29,7 @@
 				</tr>
 				{%endfor%}
 				</table>
-				<a href="{% url 'tasks:task_new' %}">Nueva</a>
+				<a href="{% url 'tasks:task_new' %}">Crear tarea</a>
 			</div>
 		 </div>
 	</div>
